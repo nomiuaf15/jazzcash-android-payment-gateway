@@ -1,25 +1,20 @@
-# jazzcashpaymentgateway
-
-
-JAZZ CASH ANDROID PAYMENT GATEWAY LIBRARY
+#JAZZ CASH ANDROID PAYMENT GATEWAY LIBRARY
 
 add the following maven into your Projects build.Gradle
 
-------------------------------------------------------------------
 allprojects {
-    repositories { 
-                maven { url 'https://jitpack.io' } 
-            } 
-    }
-------------------------------------------------------------------
+repositories {
+maven { url 'https://jitpack.io' }
+}
+}
+
 
 
 Add the following dependency into your app build.Gradle
 
 
-------------------------------------------------------------------
 implementation 'com.github.nomiuaf15:jazzcashpaymentgateway:1.0'
-------------------------------------------------------------------
+
 
 
 For Gradle Version 7.0 > 
@@ -27,17 +22,16 @@ For Gradle Version 7.0 >
 add these following lines into the settings.gradle
 
 
-------------------------------------------------------------------
 dependencyResolutionManagement {
-        repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
-        repositories {
-                        google()
-                        mavenCentral()
-                        jcenter()
-                        maven { url 'https://jitpack.io'}
-                }
-        }   
-------------------------------------------------------------------
+repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
+repositories {
+google()
+mavenCentral()
+jcenter() // Warning: this repository is going to shut down soon
+
+        maven { url 'https://jitpack.io'}
+    }
+}
 
 
 Create Three Activities 
@@ -57,14 +51,6 @@ add three layouts as well
 
 Add following code into your activity_main.xml
 
---------------------------------------------------------------------------------------------------------------
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-xmlns:tools="http://schemas.android.com/tools"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-tools:context=".MainActivity">
 
     <Button
         android:id="@+id/buyNow"
@@ -76,8 +62,6 @@ tools:context=".MainActivity">
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
---------------------------------------------------------------------------------------------------------------
 
 
 
@@ -85,14 +69,7 @@ tools:context=".MainActivity">
 
 Add following code into your activity_payment.xml
 
---------------------------------------------------------------------------------------------------------------
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-xmlns:tools="http://schemas.android.com/tools"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-tools:context=".PaymentActivity">
+
 
     <WebView
         android:id="@+id/activity_payment_webview"
@@ -100,23 +77,11 @@ tools:context=".PaymentActivity">
         android:layout_height="match_parent"
         android:visibility="visible"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
---------------------------------------------------------------------------------------------------------------
-
 
 
 
 Add following code into your activity_response.xml
 
---------------------------------------------------------------------------------------------------------------
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-xmlns:tools="http://schemas.android.com/tools"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-android:gravity="center"
-tools:context=".ResponseActivity">
 
     <TextView
         android:id="@+id/responseText"
@@ -127,8 +92,6 @@ tools:context=".ResponseActivity">
         android:textColor="@color/black"
         android:text="JazzCash Response Message Here."/>
 
-</LinearLayout>
---------------------------------------------------------------------------------------------------------------
 
 
 
@@ -138,7 +101,7 @@ That's it for the xml files. Now move to the java files.
 
 
 Add the following code in MainActivity.java
------------------------------------------------------------------------------------------------------------------
+
 public class MainActivity extends AppCompatActivity {
 Button BuyNow;
 
@@ -161,12 +124,12 @@ Button BuyNow;
     }
 
 }
------------------------------------------------------------------------------------------------------------------
+
 
 
 
 Add the following code in PaymentActivity.java
------------------------------------------------------------------------------------------------------------------
+
 public class PaymentActivity extends AppCompatActivity {
 WebView webView;
 JazzCash jazzCash;
@@ -189,12 +152,12 @@ JazzCash jazzCash;
     }
 
 }
------------------------------------------------------------------------------------------------------------------
+
 
 
 
 Add the following code in ResponseActivity.java
------------------------------------------------------------------------------------------------------------------
+
 public class ResponseActivity extends AppCompatActivity {
 TextView responseText;
 JazzCashResponse jazzCashResponse;
@@ -215,11 +178,10 @@ JazzCashResponse jazzCashResponse;
 
     }
 }
------------------------------------------------------------------------------------------------------------------
+
 
 
 
 Now Run and Test your app.
 
 
------------------------------------------------------------------------------------------------------------------
