@@ -1,38 +1,38 @@
-#JAZZ CASH ANDROID PAYMENT GATEWAY LIBRARY
+# JAZZ CASH ANDROID PAYMENT GATEWAY LIBRARY
 
-add the following maven into your Projects build.Gradle
+Add the following maven into your Projects build.Gradle
 
+````
 allprojects {
-repositories {
-maven { url 'https://jitpack.io' }
-}
-}
-
+    repositories {
+               maven { url 'https://jitpack.io' }
+            }
+    }
+````
 
 
 Add the following dependency into your app build.Gradle
 
-
+````
 implementation 'com.github.nomiuaf15:jazzcashpaymentgateway:1.0'
-
+````
 
 
 For Gradle Version 7.0 > 
 
 add these following lines into the settings.gradle
 
-
+````
 dependencyResolutionManagement {
 repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
-repositories {
-google()
-mavenCentral()
-jcenter() // Warning: this repository is going to shut down soon
-
-        maven { url 'https://jitpack.io'}
-    }
-}
-
+   repositories {
+                 google()
+                 mavenCentral()
+                 jcenter()
+            maven { url 'https://jitpack.io'}
+            }
+     }
+````
 
 Create Three Activities 
 
@@ -51,7 +51,7 @@ add three layouts as well
 
 Add following code into your activity_main.xml
 
-
+````
     <Button
         android:id="@+id/buyNow"
         android:layout_width="wrap_content"
@@ -62,7 +62,7 @@ Add following code into your activity_main.xml
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
+````
 
 
 
@@ -70,19 +70,19 @@ Add following code into your activity_main.xml
 Add following code into your activity_payment.xml
 
 
-
+````
     <WebView
         android:id="@+id/activity_payment_webview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:visibility="visible"/>
-
+````
 
 
 
 Add following code into your activity_response.xml
 
-
+````
     <TextView
         android:id="@+id/responseText"
         android:layout_width="match_parent"
@@ -91,7 +91,7 @@ Add following code into your activity_response.xml
         android:textSize="16dp"
         android:textColor="@color/black"
         android:text="JazzCash Response Message Here."/>
-
+````
 
 
 
@@ -102,9 +102,7 @@ That's it for the xml files. Now move to the java files.
 
 Add the following code in MainActivity.java
 
-public class MainActivity extends AppCompatActivity {
-Button BuyNow;
-
+````
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -123,17 +121,13 @@ Button BuyNow;
 
     }
 
-}
-
+````
 
 
 
 Add the following code in PaymentActivity.java
 
-public class PaymentActivity extends AppCompatActivity {
-WebView webView;
-JazzCash jazzCash;
-
+````
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -150,18 +144,14 @@ JazzCash jazzCash;
 
 
     }
-
-}
+````
 
 
 
 
 Add the following code in ResponseActivity.java
 
-public class ResponseActivity extends AppCompatActivity {
-TextView responseText;
-JazzCashResponse jazzCashResponse;
-
+````
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -177,8 +167,7 @@ JazzCashResponse jazzCashResponse;
 
 
     }
-}
-
+````
 
 
 
