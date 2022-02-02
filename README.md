@@ -1,6 +1,6 @@
 # JAZZ CASH ANDROID PAYMENT GATEWAY LIBRARY
 
-Add the following maven into your Projects build.Gradle
+Add the following maven into your **Projects build.Gradle**
 
 ````
 allprojects {
@@ -11,7 +11,7 @@ allprojects {
 ````
 
 
-Add the following dependency into your app build.Gradle
+Add the following dependency into your **App build.Gradle**
 
 ````
 implementation 'com.github.nomiuaf15:jazzcashpaymentgateway:1.0'
@@ -170,7 +170,17 @@ Add the following code in ResponseActivity.java
 ````
 
 
+## Now Run and Test your app.
 
-Now Run and Test your app.
+# Screenshots
 
 
+![device-2022-02-02-114752](https://user-images.githubusercontent.com/80037756/152107679-3f27369f-0d38-4221-b8b1-f93e66c38ace.png)
+
+![device-2022-02-02-115140](https://user-images.githubusercontent.com/80037756/152107836-89cd5919-1c5a-4fdc-b030-35cad6709a44.png)
+
+![device-2022-02-02-115205](https://user-images.githubusercontent.com/80037756/152108536-8e78df93-00ed-4feb-a2e8-131f6110b182.png)
+
+![device-2022-02-02-115239](https://user-images.githubusercontent.com/80037756/152108595-2d45c5df-9d1f-46db-8035-1c045a34d76d.png)
+
+![device-2022-02-02-115353](https://user-images.githubusercontent.com/80037756/152108630-80d0acd1-becb-4abb-ad3a-5cc0dd7b380d.png)
