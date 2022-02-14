@@ -10,15 +10,13 @@ allprojects {
     }
 ````
 
-
 Add the following dependency into your app build.Gradle
 
 ````
 implementation 'com.github.nomiuaf15:jazzcashpaymentgateway:1.1'
 ````
 
-
-For Gradle Version 7.0 > 
+For Gradle Version 7.0 >
 
 add these following lines into the settings.gradle
 
@@ -34,20 +32,17 @@ repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
      }
 ````
 
-Create Three Activities 
+Create Three Activities
 
 1. Main Activity
 2. Payment Activity
 3. Response Activity
-
 
 add three layouts as well
 
 1. activity_main.xml
 2. activity_payment.xml
 3. activity_response.xml
-
-
 
 Add following code into your activity_main.xml
 
@@ -64,11 +59,7 @@ Add following code into your activity_main.xml
 
 ````
 
-
-
-
 Add following code into your activity_payment.xml
-
 
 ````
     <WebView
@@ -77,8 +68,6 @@ Add following code into your activity_payment.xml
         android:layout_height="match_parent"
         android:visibility="visible"/>
 ````
-
-
 
 Add following code into your activity_response.xml
 
@@ -93,12 +82,7 @@ Add following code into your activity_response.xml
         android:text="JazzCash Response Message Here."/>
 ````
 
-
-
-
 That's it for the xml files. Now move to the java files.
-
-
 
 Add the following code in MainActivity.java
 
@@ -123,10 +107,7 @@ Add the following code in MainActivity.java
 
 ````
 
-
-
 Add the following code in PaymentActivity.java
-
 
 ````
     @Override
@@ -168,7 +149,6 @@ If You wanna pass or save custom values then use the following code (max 5 value
     }
 ````
 
-
 Add the following code in ResponseActivity.java
 
 ````
@@ -189,14 +169,12 @@ Add the following code in ResponseActivity.java
     }
 ````
 
-
-
 Now Run and Test your app.
 
 
 
-![device-2022-02-02-114752](https://user-images.githubusercontent.com/80037756/153843347-9c3c9f28-eb0c-4460-9d6c-8a731da1c844.png)
-![device-2022-02-02-115140](https://user-images.githubusercontent.com/80037756/153843357-bdf081dd-398b-4d13-b68a-f9ef09ea5420.png)
-![device-2022-02-02-115205](https://user-images.githubusercontent.com/80037756/153843373-834d0468-87ee-4c71-9133-6e489da88a8d.png)
-![device-2022-02-02-115239](https://user-images.githubusercontent.com/80037756/153843382-79bda4a6-698f-4561-9815-742c4f874141.png)
-![device-2022-02-02-115353](https://user-images.githubusercontent.com/80037756/153843399-ea062f63-b778-46d0-b43d-11402d4d4bd5.png)
+<img src="https://user-images.githubusercontent.com/80037756/153843347-9c3c9f28-eb0c-4460-9d6c-8a731da1c844.png" width=100 height=100/>
+<img src="https://user-images.githubusercontent.com/80037756/153843357-bdf081dd-398b-4d13-b68a-f9ef09ea5420.png" width=100 height=100/>
+<img src="https://user-images.githubusercontent.com/80037756/153843373-834d0468-87ee-4c71-9133-6e489da88a8d.png" width=100 height=100/>
+<img src="https://user-images.githubusercontent.com/80037756/153843382-79bda4a6-698f-4561-9815-742c4f874141.png" width=100 height=100/>
+<img src="https://user-images.githubusercontent.com/80037756/153843399-ea062f63-b778-46d0-b43d-11402d4d4bd5.png" width=100 height=100/>
