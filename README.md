@@ -174,3 +174,8 @@ Add the following code in ResponseActivity.java
 Now Run and Test your app.
 
 
+https://github.com/nomiuaf15/jazzcash-android-payment-gateway/blob/1.1/device-2022-02-02-114752.png
+https://github.com/nomiuaf15/jazzcash-android-payment-gateway/blob/1.1/device-2022-02-02-115140.png
+https://github.com/nomiuaf15/jazzcash-android-payment-gateway/blob/1.1/device-2022-02-02-115205.png
+https://github.com/nomiuaf15/jazzcash-android-payment-gateway/blob/1.1/device-2022-02-02-115239.png
+https://github.com/nomiuaf15/jazzcash-android-payment-gateway/blob/1.1/device-2022-02-02-115353.png
