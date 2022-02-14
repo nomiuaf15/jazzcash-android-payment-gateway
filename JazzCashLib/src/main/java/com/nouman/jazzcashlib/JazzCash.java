@@ -62,7 +62,6 @@ public class JazzCash {
     private String pp_mpf_4 = "4";
     private String pp_mpf_5 = "5";
 
-
     public JazzCash(Context context, Activity currentActivity, Class responseActivity, WebView jazzCashWebView, String jazzCashMerchantID, String jazzCashPassword, String jazzCashIntegritySalt, String jazzCashReturnURL, String jazzCashPrice) {
         this.context = context;
         this.currentActivity = currentActivity;
