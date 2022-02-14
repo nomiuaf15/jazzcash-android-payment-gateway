@@ -8,6 +8,7 @@ import android.webkit.WebView;
 
 import com.nouman.jazzcashlib.JazzCash;
 
+
 public class PaymentActivity extends AppCompatActivity {
     WebView webView;
     JazzCash jazzCash;
@@ -22,7 +23,7 @@ public class PaymentActivity extends AppCompatActivity {
         Intent intentData = getIntent();
         String price = intentData.getStringExtra("price");
 
-        jazzCash = new JazzCash(this, this, ResponseActivity.class, webView, "MC32336", "45u52gxa36", "u791w26e91", "http://localhost/loadx-pk/pay_with_jazzcash", price, "750");
+        jazzCash = new JazzCash(this, this, ResponseActivity.class, webView, "MC32336", "45u52gxa36", "u791w26e91", "http://test.loadx.pk/pay_with_jazzcash", price);
 
         jazzCash.integrateNow();
 

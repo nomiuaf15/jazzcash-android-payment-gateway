@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import com.nouman.jazzcashlib.Constants;
-import com.nouman.jazzcashlib.JazzCash;
 import com.nouman.jazzcashlib.JazzCashResponse;
 
 public class ResponseActivity extends AppCompatActivity {
