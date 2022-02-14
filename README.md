@@ -1,6 +1,6 @@
 # JAZZ CASH ANDROID PAYMENT GATEWAY LIBRARY
 
-Add the following maven into your **Project build.Gradle**
+Add the following maven into your Projects build.Gradle
 
 ````
 allprojects {
@@ -11,16 +11,16 @@ allprojects {
 ````
 
 
-Add the following dependency into your **App build.Gradle**
+Add the following dependency into your app build.Gradle
 
 ````
 implementation 'com.github.nomiuaf15:jazzcashpaymentgateway:1.0'
 ````
 
 
-For Gradle Version 7.0 or > 
+For Gradle Version 7.0 > 
 
-Add these following lines into the settings.gradle
+add these following lines into the settings.gradle
 
 ````
 dependencyResolutionManagement {
@@ -169,8 +169,6 @@ Add the following code in ResponseActivity.java
     }
 ````
 
-
-# Screenshots
 
 
 Now Run and Test your app.
