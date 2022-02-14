@@ -14,7 +14,7 @@ allprojects {
 Add the following dependency into your app build.Gradle
 
 ````
-implementation 'com.github.nomiuaf15:jazzcashpaymentgateway:1.0'
+implementation 'com.github.nomiuaf15:jazzcashpaymentgateway:1.1'
 ````
 
 
@@ -127,6 +127,7 @@ Add the following code in MainActivity.java
 
 Add the following code in PaymentActivity.java
 
+
 ````
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -138,7 +139,7 @@ Add the following code in PaymentActivity.java
         Intent intentData = getIntent();
         String price = intentData.getStringExtra("price");
 
-        jazzCash = new JazzCash(this, this, ResponseActivity.class, webView, "Pass your JazzCash MerchantID here", "Pass your JazzCash password here", "Pass your JazzCash IntegritySalt Value here", "Pass your jazzCash Returnm Url here", "Pass the price here", "Add Custom Variable 1 Values here");
+        jazzCash = new JazzCash(this, this, ResponseActivity.class, webView, "Pass your JazzCash MerchantID here", "Pass your JazzCash password here", "Pass your JazzCash IntegritySalt Value here", "Pass your jazzCash Returnm Url here", "Pass the price here");
 
         jazzCash.integrateNow();
 
@@ -146,7 +147,26 @@ Add the following code in PaymentActivity.java
     }
 ````
 
+If You wanna pass or save custom values then use the following code (max 5 values)
 
+````
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_payment);
+
+        webView = findViewById(R.id.activity_payment_webview);
+
+        Intent intentData = getIntent();
+        String price = intentData.getStringExtra("price");
+
+        jazzCash = new JazzCash(this, this, ResponseActivity.class, webView, "Pass your JazzCash MerchantID here", "Pass your JazzCash password here", "Pass your JazzCash IntegritySalt Value here", "Pass your jazzCash Returnm Url here", "Pass the price here", "Add Custom Value if you wanna pass here");
+
+        jazzCash.integrateNow();
+
+
+    }
+````
 
 
 Add the following code in ResponseActivity.java
@@ -174,8 +194,9 @@ Add the following code in ResponseActivity.java
 Now Run and Test your app.
 
 
-https://github.com/nomiuaf15/jazzcash-android-payment-gateway/blob/1.1/device-2022-02-02-114752.png
-https://github.com/nomiuaf15/jazzcash-android-payment-gateway/blob/1.1/device-2022-02-02-115140.png
-https://github.com/nomiuaf15/jazzcash-android-payment-gateway/blob/1.1/device-2022-02-02-115205.png
-https://github.com/nomiuaf15/jazzcash-android-payment-gateway/blob/1.1/device-2022-02-02-115239.png
-https://github.com/nomiuaf15/jazzcash-android-payment-gateway/blob/1.1/device-2022-02-02-115353.png
+
+![device-2022-02-02-114752](https://user-images.githubusercontent.com/80037756/153843347-9c3c9f28-eb0c-4460-9d6c-8a731da1c844.png)
+![device-2022-02-02-115140](https://user-images.githubusercontent.com/80037756/153843357-bdf081dd-398b-4d13-b68a-f9ef09ea5420.png)
+![device-2022-02-02-115205](https://user-images.githubusercontent.com/80037756/153843373-834d0468-87ee-4c71-9133-6e489da88a8d.png)
+![device-2022-02-02-115239](https://user-images.githubusercontent.com/80037756/153843382-79bda4a6-698f-4561-9815-742c4f874141.png)
+![device-2022-02-02-115353](https://user-images.githubusercontent.com/80037756/153843399-ea062f63-b778-46d0-b43d-11402d4d4bd5.png)
