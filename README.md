@@ -173,8 +173,8 @@ Now Run and Test your app.
 
 
 
-<img src="https://user-images.githubusercontent.com/80037756/153843347-9c3c9f28-eb0c-4460-9d6c-8a731da1c844.png"/> | <img src="https://user-images.githubusercontent.com/80037756/153843357-bdf081dd-398b-4d13-b68a-f9ef09ea5420.png"/>
+<img src="https://user-images.githubusercontent.com/80037756/153843347-9c3c9f28-eb0c-4460-9d6c-8a731da1c844.png" width="50%"/> | <img src="https://user-images.githubusercontent.com/80037756/153843357-bdf081dd-398b-4d13-b68a-f9ef09ea5420.png" width="50%"/>
 
-<img src="https://user-images.githubusercontent.com/80037756/153843373-834d0468-87ee-4c71-9133-6e489da88a8d.png"/> | <img src="https://user-images.githubusercontent.com/80037756/153843382-79bda4a6-698f-4561-9815-742c4f874141.png"/>
+<img src="https://user-images.githubusercontent.com/80037756/153843373-834d0468-87ee-4c71-9133-6e489da88a8d.png" width="50%"/> | <img src="https://user-images.githubusercontent.com/80037756/153843382-79bda4a6-698f-4561-9815-742c4f874141.png"width="50%"/>
 
 <img src="https://user-images.githubusercontent.com/80037756/153843399-ea062f63-b778-46d0-b43d-11402d4d4bd5.png"/> 
