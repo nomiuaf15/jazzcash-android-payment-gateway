@@ -280,5 +280,5 @@ Now Run and Test your app.
 </table>
 
 
-[![](https://jitpack.io/v/nomansoftpvt/jazzcash-android-payment-gateway.svg)](https://jitpack.io/#nomansoftpvt/jazzcash-android-payment-gateway)
+[![](https://jitpack.io/v/nomiuaf15/jazzcash-android-payment-gateway.svg)](https://jitpack.io/#nomiuaf15/jazzcash-android-payment-gateway)
 
