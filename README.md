@@ -13,7 +13,7 @@ allprojects {
 Add the following dependency into your app build.Gradle
 
 ````
-implementation 'com.github.nomiuaf15:jazzcashpaymentgateway:1.1'
+implementation 'com.github.nomansoftpvt:jazzcash-android-payment-gateway:1.5'
 ````
 
 For Gradle Version 7.0 >
@@ -45,10 +45,24 @@ add three layouts as well
 3. activity_response.xml
 
 Add following code into your activity_main.xml
-
+for Result on Response Screen 
 ````
     <Button
         android:id="@+id/buyNow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Buy Now"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+````
+
+for Result on ActivityResult
+````
+    <Button
+        android:id="@+id/buyNowActivityResult"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Buy Now"
@@ -86,6 +100,7 @@ That's it for the xml files. Now move to the java files.
 
 Add the following code in MainActivity.java
 
+For Result on response screen
 ````
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -106,9 +121,46 @@ Add the following code in MainActivity.java
     }
 
 ````
+For Result on Activity Result
+````
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        BuyNowActivityResult = findViewById(R.id.buyNowActivityResult);
+
+        BuyNowActivityResult.setOnClickListener(view -> {
+            Intent intent = new Intent(MainActivity.this, PaymentActivity.class);
+            intent.putExtra("price", "1500.00");
+            jazzCashLauncher.launch(intent);
+
+        });
+
+    }
+
+````
+
+Also add this Launcher for ActivityResult
+````
+    ActivityResultLauncher<Intent> jazzCashLauncher = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            new ActivityResultCallback<ActivityResult>() {
+                @Override
+                public void onActivityResult(ActivityResult result) {
+                    if (result.getResultCode() == Activity.RESULT_OK) {
+                        Intent data = result.getData();
+                        JazzCashResponse jazzCashResponse = (JazzCashResponse) data.getSerializableExtra(Constants.jazzCashResponse);
+                        Toast.makeText(MainActivity.this, jazzCashResponse.getPpResponseMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
+
+````
 
 Add the following code in PaymentActivity.java
 
+For Result on Response Screen add the destination screen param on last
 ````
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -120,7 +172,7 @@ Add the following code in PaymentActivity.java
         Intent intentData = getIntent();
         String price = intentData.getStringExtra("price");
 
-        jazzCash = new JazzCash(this, this, ResponseActivity.class, webView, "Pass your JazzCash MerchantID here", "Pass your JazzCash password here", "Pass your JazzCash IntegritySalt Value here", "Pass your jazzCash Returnm Url here", "Pass the price here");
+        jazzCash = new JazzCash(this, this, webView, "Pass your JazzCash MerchantID here", "Pass your JazzCash password here", "Pass your JazzCash IntegritySalt Value here", "Pass your jazzCash Returnm Url here", "Pass the price here", "Pass your custom transaction id prefix", Pass true here for live credentials and false for test, ResponseActivity.class);
 
         jazzCash.integrateNow();
 
@@ -140,14 +192,56 @@ If You wanna pass or save custom values then use the following code (max 5 value
 
         Intent intentData = getIntent();
         String price = intentData.getStringExtra("price");
+        
+        jazzCash = new JazzCash(this, this, webView, "Pass your JazzCash MerchantID here", "Pass your JazzCash password here", "Pass your JazzCash IntegritySalt Value here", "Pass your jazzCash Returnm Url here", "Pass the price here", "Pass your custom transaction id prefix", Pass true here for live credentials and false for test,  "Add Custom Value if you wanna pass here", ResponseActivity.class);
+      
+        jazzCash.integrateNow();
 
-        jazzCash = new JazzCash(this, this, ResponseActivity.class, webView, "Pass your JazzCash MerchantID here", "Pass your JazzCash password here", "Pass your JazzCash IntegritySalt Value here", "Pass your jazzCash Returnm Url here", "Pass the price here", "Add Custom Value if you wanna pass here");
+    }
+````
+
+
+For Result on Activity Result Remove Destination Screen from params
+````
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_payment);
+
+        webView = findViewById(R.id.activity_payment_webview);
+
+        Intent intentData = getIntent();
+        String price = intentData.getStringExtra("price");
+
+        jazzCash = new JazzCash(this, this, webView, "Pass your JazzCash MerchantID here", "Pass your JazzCash password here", "Pass your JazzCash IntegritySalt Value here", "Pass your jazzCash Returnm Url here", "Pass the price here", "Pass your custom transaction id prefix", Pass true here for live credentials and false for test);
 
         jazzCash.integrateNow();
 
 
     }
 ````
+
+If You wanna pass or save custom values then use the following code (max 5 values)
+
+````
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_payment);
+
+        webView = findViewById(R.id.activity_payment_webview);
+
+        Intent intentData = getIntent();
+        String price = intentData.getStringExtra("price");
+        
+        jazzCash = new JazzCash(this, this, webView, "Pass your JazzCash MerchantID here", "Pass your JazzCash password here", "Pass your JazzCash IntegritySalt Value here", "Pass your jazzCash Returnm Url here", "Pass the price here", "Pass your custom transaction id prefix", Pass true here for live credentials and false for test ,"Add Custom Value if you wanna pass here");
+
+        jazzCash.integrateNow();
+
+
+    }
+````
+
 
 Add the following code in ResponseActivity.java
 
@@ -184,4 +278,7 @@ Now Run and Test your app.
 <td><img src="https://user-images.githubusercontent.com/80037756/153843399-ea062f63-b778-46d0-b43d-11402d4d4bd5.png" /> </td>
     </tr>
 </table>
+
+
+[![](https://jitpack.io/v/nomansoftpvt/jazzcash-android-payment-gateway.svg)](https://jitpack.io/#nomansoftpvt/jazzcash-android-payment-gateway)
 

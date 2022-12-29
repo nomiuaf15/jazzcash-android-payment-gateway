@@ -23,11 +23,17 @@ public class PaymentActivity extends AppCompatActivity {
         Intent intentData = getIntent();
         String price = intentData.getStringExtra("price");
 
-        jazzCash = new JazzCash(this, this, ResponseActivity.class, webView, "MC32336", "45u52gxa36", "u791w26e91", "http://test.loadx.pk/pay_with_jazzcash", price);
+
+        // to get result on next screen//
+        jazzCash = new JazzCash(this, this, webView, "Pass your JazzCash MerchantID here", "Pass your JazzCash password here", "Pass your JazzCash IntegritySalt Value here", "Pass your jazzCash Returnm Url here", "Pass the price here", "Pass your custom transaction id prefix", false, ResponseActivity.class);
+
+
+        //to get result onActivityResult//
+        jazzCash = new JazzCash(this, this, webView, "Pass your JazzCash MerchantID here", "Pass your JazzCash password here", "Pass your JazzCash IntegritySalt Value here", "Pass your jazzCash Returnm Url here", "Pass the price here", "Pass your custom transaction id prefix", false);
 
         jazzCash.integrateNow();
 
-
     }
+
 
 }
